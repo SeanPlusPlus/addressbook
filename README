@@ -1,1 +1,5 @@
 an address book application using sinatra, datamapper, and haml.
+
+not included in this repo is a subdir called 'db/' that is automatically
+generated (as well as a sqlite database) when you run 'ruby myapp.rb'
+from the command line.
