@@ -1,11 +1,11 @@
 # myapp.rb
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'datamapper'
 require 'haml'
 
-DataMapper.setup( :default, "sqlite3://db/addressbook.db" )
+DataMapper.setup( :default, "sqlite3:///home/sms/Projects/addressbook/db/addressbook.db" )
 
 # Define the Person model
 class Person
@@ -26,6 +26,7 @@ set :haml, :format => :html5
 
 get '/:name' do
   name = params[:name]
+  break if name == 'favicon.ico'
   person = Person.first_or_create(:firstname => name)
   person.firstname = name
   person.lastname = 'Rocci'
